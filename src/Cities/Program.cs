@@ -13,7 +13,16 @@ namespace Cities
             // TODO Swap out comparers as desired
             IComparer<City> comparer = new NameComparer();
 
-            cities.Sort(comparer);
+            IComparer<City> stateComparer = new StateComparer();
+
+            IComparer<City> populationComparer = new PopulationComparer();
+
+            cities.Sort(populationComparer);
+
+            //cities.Sort(stateComparer);
+
+            //cities.Sort(comparer);
+
 
             PrintCities(cities);
 
